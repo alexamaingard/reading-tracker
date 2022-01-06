@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h3  {
+    font-size: 1.3rem;
+}
+
+input[type=text]{
+    font-family: 'Raleway', sans-serif;
+    font-size: .9rem;
+    padding-left: 5px;
+    height: 20px;
+}
+
+.page-title {
+    height: 100px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    height: 110px;
+    background-color: #dac4b2;
+    display: flex;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+}
+
+#nav-logo {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 90px;
+    height: 90px;
+}
+
+.nav-right {
+    width: 94vw;
+}
+
+.nav-right,
+.page-links {
+    display: flex;
+    justify-content: right;
+}
+
+.page-links {
+    height: 2vh;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.page-links a:hover {
+    text-decoration: 2px #F4EEE9 underline;
+    color: #F4EEE9;
+}
+
+main {
+    height: calc(100vh - 110px - 42px);
+    background-image: linear-gradient(180deg, #dac4b2, white);
+    padding: 30px 0;
+    overflow-y: auto;
+}
+
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/images/book-wall-3.jpg);
+    background-repeat: repeat-y;
+    background-size: 100vw;
+}
+
+.main-page-container div {
+    padding: 3rem;
+    background-color: #E8DACF;
+    width: 80vw;
+    height: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5vh;
+    text-align: center;
+}
+
+.main-page-container h1 {
+    font-size: 5vh;
+}
+
+.main-page-container hr {
+    background-color: black;
+    height: 1px;
+    width: 40vw;
+}
+
+.main-page-container h2 {
+    font-size: 2vh;
+    font-weight: 400;
+}
+
+.book-wall{
+    width: 100vw;
+    height: 350px;
+}
+
+.username-form {
+    padding-top: 100px;
+    display: grid;
+}
+
+.username-form, 
+h1 {
+    display: grid;
+    place-items: start center;
+}
+
+.form-content{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.get-username-form h4 {
+    padding-bottom: 20px;
+}
+
+footer {
+    height: 42px;
+    width: 100vw;
+    background-color: #dac4b2; 
+    color: black;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+}
+
+.footer-left,
+.footer-right {
+    padding: 10px;
+    display: flex;
+}
+
+@media screen and (max-width: 998px){
+    .main-page-container h1 {
+        font-size: 4.5vh;
+    }
+    
+    .main-page-container h2 {
+        font-size: 1.8vh;
+    }
+
+    .main-page-container div {
+        height: 32.5vh;
+    }
+}
+
+@media screen and (max-width: 907px){
+    .main-page-container h1 {
+        font-size: 4vh;
+    }
+    .main-page-container div {
+        height: 35vh;
+    }
+}
