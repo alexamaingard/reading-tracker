@@ -1,9 +1,19 @@
 {
   "users": [
     {
-      "user": {
-        "username": "",
-        "password": ""
+      "userLogins": {
+        "username": "lexymcr",
+        "password": "test123"
+      },
+      "libraries": {
+        "read": [],
+        "reading": []
+      }
+    },
+    {
+      "userLogins": {
+        "username": "rubberDuck",
+        "password": "duck123"
       },
       "libraries": {
         "read": [],

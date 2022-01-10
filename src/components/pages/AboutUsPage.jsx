@@ -28,12 +28,17 @@ export const AboutUsPage = () => {
           </div>
           <h2>FAQs</h2>
           <div className="about-us-info">
-            <h3>&nbsp;</h3>
-            <p>&nbsp;</p>
+            <h3>Can I add books I've read in the past?</h3>
+            <p>You absolutely can be using our Add Book button in your "Read" library.
+              You just have to add the book to your library and it'll be automatically
+              marked as Read.
+            </p>
           </div>
           <div className="about-us-info">
-            <h3>&nbsp;</h3>
-            <p>&nbsp;</p>
+            <h3>How many shelves/libraries can I have?</h3>
+            <p>At the moment we only have the "Reading" and "Read" options. But we are 
+              working on a "Want to Read" shelf and customized ones.
+            </p>
           </div>
         </section>
       </main>

@@ -1,3 +1,9 @@
+select, 
+option {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
 .user-bar,
 .search-bar-container,
 .add-book-container {
@@ -20,16 +26,15 @@
 }
 
 .books-container,
-.list-of-users,
 .user-library {
     padding-top: 50px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
-.book,
-.user {
+.book {
     width: 700px;
     height: 100px;
     border-bottom: 1px solid black;
@@ -37,15 +42,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.book,
-.user {
     justify-content: space-between;
-}
-
-.user h4{
-    width: 200px;
 }
 
 .book-left{

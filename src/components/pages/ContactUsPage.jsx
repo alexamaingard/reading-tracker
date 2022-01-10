@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { Header } from "../Header"
 import { Footer } from "../Footer"
 
-import { APIEndPoints } from "../../config"
+import { LocalAPIEndPoints } from "../../config"
 
 import "../../styles/contact-us.css"
 
@@ -25,7 +25,6 @@ export const ContactUsPage = () => {
     const {name, value} = event.target;
     setContactForm({...contactForm, [name]: value});
   }
-  //console.log('contact form:', contactForm);
   
   const handleSubmit = event => {
     event.preventDefault();
@@ -35,7 +34,7 @@ export const ContactUsPage = () => {
   useEffect(() => {
     const postContactForm = async () => {
       try {
-        await fetch(APIEndPoints.contactURL, {
+        await fetch(LocalAPIEndPoints.contactURL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

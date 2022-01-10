@@ -1,7 +1,13 @@
+import { useContext } from 'react'
+import { StoreContext } from '../store'
+
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
 export const HomePage = () => {
+  const store = useContext(StoreContext);
+  //console.log(store);
+  
   return (
     <>
       <Header />
