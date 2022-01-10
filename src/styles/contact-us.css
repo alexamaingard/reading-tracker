@@ -22,14 +22,15 @@ label {
     font-size: 1.2rem;  
 }
 
-input[type="email"],
+input[type=email],
 input[type=text],
 textarea{
     border: none;
+    /*border-bottom: 1px solid black;*/
     border-radius: 3px;
 }
 
-input[type="email"],
+input[type=email],
 input[type=text]{
     height: 30px;
 }
@@ -37,20 +38,6 @@ input[type=text]{
 textarea {
     resize: none;
     font-size: 1.1rem;
-}
-
-.action {
-    display: grid;
-    place-items: center;
-}
-
-.submit-form-btn {
-    width: 200px;
-    height: 30px;
-    border-radius: 20px;
-    border: none;
-    background-color: #ECE1D8;
-    font-size: 1rem;
 }
 
 textarea,

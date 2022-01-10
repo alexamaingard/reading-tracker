@@ -1,0 +1,23 @@
+.sign-in-page-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.username-form {
+    display: grid;
+}
+
+.username-form {
+    display: grid;
+    place-items: center;
+    background-color: #F0E7E0;
+    width: 50vw;
+    height: 30vh;
+    border-radius: 10px;
+}
+
+.username-form .action {
+    padding-top: 30px;
+}
