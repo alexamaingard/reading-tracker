@@ -1,27 +1,56 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import { Header } from "../Header"
 import { Footer } from "../Footer"
 
+import { APIEndPoints } from "../../config"
+
 import "../../styles/contact-us.css"
 
+const initialContactForm = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  message: ""
+};
+
 export const ContactUsPage = () => {
-  const [contactForm, setContactForm] = useState({});
+  const [contactForm, setContactForm] = useState(initialContactForm);
+  const [submitForm, setSubmitForm] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleChange = event => {
-    console.log('contact form change handler:', event.target);
-    const [name, value] = event.target;
+    const {name, value} = event.target;
     setContactForm({...contactForm, [name]: value});
   }
-
+  //console.log('contact form:', contactForm);
+  
   const handleSubmit = event => {
-    console.log('contact form submit handler:', contactForm);
     event.preventDefault();
+    setSubmitForm(true);
   }
 
   useEffect(() => {
-    //post contact form to local storage
-  }, [contactForm])
+    const postContactForm = async () => {
+      try {
+        await fetch(APIEndPoints.contactURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(contactForm)
+        });
+        navigate("/", {replace: true});
+      }
+      catch (error) {
+        console.log(error);
+      }
+    }
+    submitForm && postContactForm();
+    setSubmitForm(false);
+  }, [contactForm, submitForm, navigate]);
 
   return (
     <>
@@ -35,6 +64,7 @@ export const ContactUsPage = () => {
               type="text" 
               id="first-name"
               name="firstName"
+              value={contactForm.firstName}
               onChange={handleChange} 
               required 
             />
@@ -43,6 +73,7 @@ export const ContactUsPage = () => {
               type="text" 
               id="last-name"
               name="lastName" 
+              value={contactForm.lastName}
               onChange={handleChange}
               required 
             />
@@ -51,6 +82,7 @@ export const ContactUsPage = () => {
               type="email" 
               id="email"
               name="email" 
+              value={contactForm.email}
               onChange={handleChange}
               required 
             />
@@ -61,6 +93,7 @@ export const ContactUsPage = () => {
               cols="30" 
               rows="10" 
               placeholder="Type your message here.." 
+              value={contactForm.message}
               onChange={handleChange}
               required>
             </textarea>
