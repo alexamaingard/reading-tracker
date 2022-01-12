@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import { StoreContext } from '../../store';
+//import { StoreContext } from '../../store';
 import { LocalAPIEndPoints } from "../../config";
 
 import { Header } from "../Header";
@@ -11,41 +11,41 @@ import { ReadingLibrary } from "./ReadingLibrary";
 
 import "../../styles/library.css";
 
-export const UsersPage = () => {
-  const store = useContext(StoreContext);
-  console.log(store);
-  const [library, setLibrary] = useState({});
-  const [initialFetch, setInitialFetch] = useState(true);
-  const [reading, setReading] = useState({});
-  const [read, setRead] = useState({});
-
-  useEffect(() => {
-    const fetchLibrary = async () => {
-      const res = await fetch(LocalAPIEndPoints.libraryURL);
-      const data = await res.json();
-      console.log("General library:", data);
-      setLibrary(data);
-    }
-    initialFetch && fetchLibrary();
-    setInitialFetch(false);
-    //set read
-    //set reading
-  }, [library, initialFetch]);
+export const UsersPage = (props) => {
+  //const store = useContext(StoreContext);
+  //console.log("Userspage store:", store);
+  const {
+    user,
+    readLibrary,
+    setReadLibrary,
+    readingLibrary,
+    setReadingLibrary,
+    dataBaseLibrary,
+    setDataBaseLibrary,
+  } = props;
 
   const [chosenLibrary, setChosenLibrary] = useState("");
-  console.log("Chosen library:", chosenLibrary);
+  //console.log("Chosen library:", chosenLibrary);
 
   return (
     <>
       <Header />
       <main className="user-library">
         <h1 className="page-title">Your libraries</h1>
-        <UserLibraryHeader 
+        <UserLibraryHeader
+          chosenLibrary={chosenLibrary}
           setChosenLibrary={setChosenLibrary}
-          library={library}
+          dataBaseLibrary={dataBaseLibrary}
+          setDataBaseLibrary={setDataBaseLibrary}
+          readLibrary={readLibrary}
+          setReadLibrary={setReadLibrary}
+          readingLibrary={readingLibrary}
+          setReadingLibrary={setReadingLibrary}
         />
-        {chosenLibrary === "read" && <ReadLibrary read={read} />}
-        {chosenLibrary === "reading" && <ReadingLibrary reading={reading} />}
+        {chosenLibrary === "read" && <ReadLibrary read={readLibrary} />}
+        {chosenLibrary === "reading" && (
+          <ReadingLibrary reading={readingLibrary} />
+        )}
       </main>
       <Footer />
     </>

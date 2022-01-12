@@ -5,8 +5,8 @@ import { ReadBook } from "./ReadBook";
 export const ReadLibrary = (props) => {
   const { read } = props;
 
-  const store = useContext(StoreContext);
-  console.log("library:", store.state.libraries.read);
+  //const store = useContext(StoreContext);
+  //console.log("library:", store.state.usersLibraries.read);
 
   return (
     <ul className="books-container">

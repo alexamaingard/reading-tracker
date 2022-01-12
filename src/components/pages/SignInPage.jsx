@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { StoreContext } from '../../store'
+//import { StoreContext } from '../../store'
 
 import { Header } from "../Header";
 import { Footer } from "../Footer";
@@ -9,8 +9,9 @@ import { LocalAPIEndPoints } from "../../config";
 
 import "../../styles/sign-in.css";
 
-export const SignInPage = () => {
-  const store = useContext(StoreContext);
+export const SignInPage = props => {
+  //const store = useContext(StoreContext);
+  const { setUser } = props;
 
   const [userLogins, setUserLogins] = useState({
     username: "",
@@ -22,12 +23,13 @@ export const SignInPage = () => {
 
   const navigate = useNavigate();
 
+  //Fetch list of users
   useEffect(() => {
-    console.log(usersDataList);
     const fetchUsersData = async () => {
       try {
         const res = await fetch(LocalAPIEndPoints.usersURL);
         const data = await res.json();
+        console.log("users:", data);
         setUsersDataList(data);
       } catch (error) {
         console.log(error);
@@ -47,6 +49,7 @@ export const SignInPage = () => {
     setUserLoginsSubmit(true);
   };
 
+  //Find user
   useEffect(() => {
     const getUserData = () => {
       const userFound = usersDataList.find(
@@ -55,17 +58,20 @@ export const SignInPage = () => {
           user.userLogins.password === userLogins.password
       );
       if (userFound) {
+        console.log("selected user:", userFound);
+        setUser(userFound);
+        /*
         store.dispatch({
           type: "setUser",
           payload: userFound
-        });
+        });*/
         navigate(`/${userLogins.username}`, { replace: true });
       }
       //alert wrong password or non-existing user
     };
     userLoginsSubmit && getUserData();
     setUserLoginsSubmit(false);
-  }, [userLoginsSubmit, userLogins, usersDataList, navigate, store]);
+  }, [userLoginsSubmit, userLogins, usersDataList, navigate, setUser]);
 
   return (
     <>

@@ -5,23 +5,45 @@
         "username": "lexymcr",
         "password": "test123"
       },
-      "libraries": {
-        "read": [],
-        "reading": []
-      }
-    },
-    {
-      "userLogins": {
-        "username": "rubberDuck",
-        "password": "duck123"
-      },
-      "libraries": {
+      "userLibraries": {
         "read": [],
         "reading": []
       }
     }
   ],
-  "library": [],
+  "library": [
+    {
+      "isbn": "9781409189374",
+      "title": "The Light Over London",
+      "authors": [
+        "Julia Kelly"
+      ],
+      "cover": "http://books.google.com/books/content?id=SPX_wQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "A forgotten diary, a forbidden love affair, a desperate fight to save her country 2017 When Cara Hargreaves discovers a diary from the 1940s, its contents will change her life forever... 1941 When Louise Keene meets dashing RAF pilot, Paul Bolton, she is swept off her feet. Then Paul is sent to war and Louise, defying her mother's wishes, ends up a gunner girl in London. Watching the pitch-black skies for bombers, Louise finds comfort recording her dreams in her diary. And as Cara reads her words, decades later, she learns that hope can be found even in the darkest of times, she just needs to take a chance... Discover the story of the remarkable World War Two gunner girls in this entrancing and heartbreaking novel, perfect for fans of Martha Hall Kelly's The Lilac Girls and Kristin Hannah's The Nightingale.",
+      "pages": 304,
+      "id": 1
+    },
+    {
+      "isbn": "9781913322076",
+      "title": "Inkspell (2020 Reissue)",
+      "authors": [
+        "Cornelia Funke"
+      ],
+      "cover": "http://books.google.com/books/content?id=W07_ywEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "The second book in Cornelia Funke's internationally celebrated trilogy - magical, thrilling and mesmerising. 'I don't think I've ever read anything that conveys so well the joys, terrors and pitfalls of reading'Diana Wynne Jones on Inkheart Although a year has passed, not a day goes by without Meggie thinking of the extraordinary events of Inkheart, and the story whose characters strode out of the pages, and changed her life for ever. But for Dustfinger, the fire-eater, torn from his world of words, the need to return has become desperate. When he finds a crooked storyteller with the magical ability to read him back, he sets in motion a dangerous reversal that sees the characters of Inkheart transported to a charmed Inkworld, about to be fought over by rival rebels and princes.",
+      "pages": 688,
+      "id": 2
+    },
+    {
+      "isbn": "9781509829477",
+      "title": "Artist's Way",
+      "authors": [
+        "Julia Cameron"
+      ],
+      "cover": "http://books.google.com/books/content?id=TfD6DAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "id": 3
+    }
+  ],
   "contact": [
     {
       "firstName": "Alexa",
