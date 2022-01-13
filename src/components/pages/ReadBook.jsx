@@ -1,19 +1,53 @@
+import { useState } from "react/cjs/react.development";
+
 export const ReadBook = (props) => {
-  const { book, index } = props;
+  const { readBook } = props;
+  const [viewDescription, setViewDescription] = useState(false);
+
+  const authorsString = () => {
+    let authors = "";
+    if (readBook.authors.length > 1) {
+      for (let i = 0; i < readBook.authors.length - 1; i++) {
+        authors += `${readBook.authors[i]}, ${readBook.authors[i + 1]}`;
+      }
+    } else {
+      authors = readBook.authors[0];
+    }
+    return authors;
+  };
+
+  const authors = authorsString();
+
+  const handleViewButton = () => {
+    const activeView = viewDescription;
+    setViewDescription(!activeView);
+  };
 
   return (
-    <li className="book" key={index}>
-      <div className="book-left">
-        <img className="book-cover-small" src="" alt="" />
-        <div className="book-info">
-          <h4 className="book-title">{book.title}</h4>
-          <p className="book-author">{book.author}</p>
+    <>
+      <div className="book">
+        <div className="book-left">
+          <img className="book-cover-small" src={readBook.cover} alt="" />
+          <div className="book-info">
+            <h4 className="book-title">{readBook.title}</h4>
+            <p className="book-author">{authors}</p>
+          </div>
         </div>
-        <p className="isbn">{book.isbn}</p>
+        <p className="isbn">
+          <b>ISBN:</b>
+          {readBook.isbn}
+        </p>
         <div className="book-actions">
-          <button className="book-action">View</button>
+          <button className="book-action" onClick={handleViewButton}>
+            View
+          </button>
         </div>
       </div>
-    </li>
+      {viewDescription && 
+        <div className="view-description">
+            <p>{readBook.description? readBook.description : "No description available"}</p>
+        </div>
+      }
+    </>
   );
 };

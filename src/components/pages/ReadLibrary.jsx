@@ -2,17 +2,20 @@ import { useContext } from "react";
 import { StoreContext } from "../../store";
 import { ReadBook } from "./ReadBook";
 
-export const ReadLibrary = (props) => {
-  const { read } = props;
-
-  //const store = useContext(StoreContext);
-  //console.log("library:", store.state.usersLibraries.read);
+export const ReadLibrary = () => {
+  const store = useContext(StoreContext);
 
   return (
     <ul className="books-container">
-      {read.map((book, index) => (
-        <ReadBook book={book} index={index} />
-      ))}
+      {store.state.userLibraries.read.map((bookId, index) => {
+        //console.log(bookId);
+        const readBook = store.state.dataBaseLibrary.find(book => book.id === bookId);
+        //console.log(readBook);
+        return(<li key={index}>
+          <ReadBook readBook={readBook} />
+        </li>)
+        }
+      )}
     </ul>
   );
 };

@@ -1,14 +1,24 @@
 {
   "users": [
     {
+      "id": 1,
       "userLogins": {
         "username": "lexymcr",
         "password": "test123"
       },
-      "userLibraries": {
-        "read": [],
-        "reading": []
-      }
+      "read": [
+        1,
+        2,
+        11,
+        14,
+        16,
+        18
+      ],
+      "reading": [
+        3,
+        5,
+        6
+      ]
     }
   ],
   "library": [
@@ -42,6 +52,72 @@
       ],
       "cover": "http://books.google.com/books/content?id=TfD6DAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "id": 3
+    },
+    {
+      "isbn": "9781847495815",
+      "title": "A Game of Chess and Other Stories",
+      "authors": [
+        "Stefan Zweig"
+      ],
+      "cover": "http://books.google.com/books/content?id=ISd5jgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "When it is discovered that the reigning world chess champion, Mirko Czentovic, is on board a cruiser heading for Buenos Aires, a fellow passenger challenges him to a game. Czentovic easily defeats him, but during the rematch a mysterious Austrian, Dr B., intervenes and, to the surprise of everyone, helps the underdog obtain a draw. When, the next day, Dr B. confides in a compatriot travelling on the same ship and decides to reveal the harrowing secret behind his formidable chess knowledge, a chilling tale of imprisonment and psychological torment unfolds. Stefan Zweig's last and most famous story, 'A Game of Chess' was written in exile in Brazil and explores its author's anxieties about the situation in Europe following the rise of the Nazi regime. The tale is presented here in a brand-new translation, along with three of the master storyteller's most acclaimed novellas: Twenty-four Hours in the Life of a Woman, The Invisible Collection and Incident on Lake Geneva.",
+      "pages": 320,
+      "id": 5
+    },
+    {
+      "isbn": "9780316429856",
+      "title": "Acts of Desperation",
+      "authors": [
+        "Megan Nolan"
+      ],
+      "cover": "http://books.google.com/books/content?id=77-nzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "The female narrator falls completely into the power of a male writer. When he suddenly rejects her, she resolves to hang on to him and his love at all costs...even if it destroys her.",
+      "pages": 288,
+      "id": 6
+    },
+    {
+      "isbn": "9780063025288",
+      "title": "The Reading List",
+      "authors": [
+        "Sara Nisha Adams"
+      ],
+      "cover": "http://books.google.com/books/content?id=s0HZzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "Widower Mukesh lives a quiet life after losing his beloved wife. Working at the local library for the summer, Aleisha discovers a list of novels that she's never heard of before. Intrigued, she impulsively decides to read every book on the list. When Mukesh arrives at the library, desperate to forge a connection with his bookworm granddaughter, Aleisha passes along the reading list hoping that it will be a lifeline for him too. Slowly, the shared books create a connection between two lonely souls, as fiction helps them escape their grief and everyday troubles and find joy again. Print run 75,000.",
+      "pages": 384,
+      "id": 11
+    },
+    {
+      "isbn": "9781982168438",
+      "title": "Cloud Cuckoo Land",
+      "authors": [
+        "Anthony Doerr"
+      ],
+      "cover": "http://books.google.com/books/content?id=blRFEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "Finalist for the 2021 National Book Award, longlisted for the 2022 Andrew Carnegie Medal, and the instant New York Times bestseller! From the Pulitzer Prize-winning author of All the Light We Cannot See, perhaps the most bestselling and beloved literary fiction of our time, comes the highly anticipated Cloud Cuckoo Land. Set in Constantinople in the fifteenth century, in a small town in present-day Idaho, and on an interstellar ship decades from now, Anthony Doerr's gorgeous third novel is a triumph of imagination and compassion, a soaring story about children on the cusp of adulthood in worlds in peril, who find resilience, hope--and a book. In Cloud Cuckoo Land, Doerr has created a magnificent tapestry of times and places that reflects our vast interconnectedness--with other species, with each other, with those who lived before us, and with those who will be here after we're gone. Thirteen-year-old Anna, an orphan, lives inside the formidable walls of Constantinople in a house of women who make their living embroidering the robes of priests. Restless, insatiably curious, Anna learns to read, and in this ancient city, famous for its libraries, she finds a book, the story of Aethon, who longs to be turned into a bird so that he can fly to a utopian paradise in the sky. This she reads to her ailing sister as the walls of the only place she has known are bombarded in the great siege of Constantinople. Outside the walls is Omeir, a village boy, miles from home, conscripted with his beloved oxen into the invading army. His path and Anna's will cross. Five hundred years later, in a library in Idaho, octogenarian Zeno, who learned Greek as a prisoner of war, rehearses five children in a play adaptation of Aethon's story, preserved against all odds through centuries. Tucked among the library shelves is a bomb, planted by a troubled, idealistic teenager, Seymour. This is another siege. And in a not-so-distant future, on the interstellar ship Argos, Konstance is alone in a vault, copying on scraps of sacking the story of Aethon, told to her by her father. She has never set foot on our planet. Like Marie-Laure and Werner in All the Light We Cannot See, Anna, Omeir, Seymour, Zeno, and Konstance are dreamers and outsiders who find resourcefulness and hope in the midst of gravest danger. Their lives are gloriously intertwined. Doerr's dazzling imagination transports us to worlds so dramatic and immersive that we forget, for a time, our own. Dedicated to \"the librarians then, now, and in the years to come,\" Cloud Cuckoo Land is a beautiful and redemptive novel about stewardship--of the book, of the Earth, of the human heart.",
+      "pages": 640,
+      "id": 14
+    },
+    {
+      "isbn": "9781594749476",
+      "title": "Geekerella",
+      "authors": [
+        "Ashley Poston"
+      ],
+      "cover": "http://books.google.com/books/content?id=-gpDDgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "Geek girl Ellie hopes to go to ExcelsiCon Cosplay to meet the actor (closet nerd Darien) scheduled to play Federation Prince Carmindor in a reboot of the movie Starfield.",
+      "pages": 319,
+      "id": 16
+    },
+    {
+      "isbn": "9781728209807",
+      "title": "Me and White Supremacy",
+      "authors": [
+        "Layla F Saad"
+      ],
+      "cover": "http://books.google.com/books/content?id=tGuixQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "\"Originally published as The me and white supremacy workbook in 2019\"--Copyright page.",
+      "pages": 256,
+      "id": 18
     }
   ],
   "contact": [

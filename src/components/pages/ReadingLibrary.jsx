@@ -3,15 +3,18 @@ import { StoreContext } from "../../store";
 import { ReadingBook } from "./ReadingBook";
 
 export const ReadingLibrary = (props) => {
-  const { reading } = props;
-
   const store = useContext(StoreContext);
-  console.log(store);
 
   return (
     <ul className="books-container">
-      {reading.map((book, index) => 
-        <ReadingBook book={book} index={index} />
+      {store.state.userLibraries.reading.map((bookId, index) => {
+        //console.log(bookId);
+        const readingBook = store.state.dataBaseLibrary.find(book => book.id === bookId);
+        //console.log(readingBook);
+        return(<li key={index}>
+          <ReadingBook readingBook={readingBook} />
+        </li>)
+        }
       )}
     </ul>
   );

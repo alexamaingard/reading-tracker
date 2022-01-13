@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
-//import React, { useReducer, useMemo } from "react";
-//import { StoreContext, setUserReducer, initialState } from "./store";
+import React, { useReducer, useMemo } from "react";
+import { StoreContext, rootReducer, initialState } from "./store";
 
 import { HomePage } from "./components/HomePage";
 import { SignInPage } from "./components/pages/SignInPage";
@@ -9,20 +9,32 @@ import { ContactUsPage } from "./components/pages/ContactUsPage";
 import { UsersPage } from "./components/pages/UsersPage";
 
 import "./styles/main.css";
-import { useEffect, useState } from "react";
-import { LocalAPIEndPoints } from "./config";
+//import { useEffect, useState } from "react";
+//import { LocalAPIEndPoints } from "./config";
 
 export const App = () => {
-  //const [state, dispatch] = useReducer(setUserReducer, initialState);
-  /*
+  const [state, dispatch] = useReducer(rootReducer, initialState);
+
   const store = useMemo(() => {
-    return { state: state, dispatch: dispatch }
+    return { state: state, dispatch: dispatch };
   }, [state, dispatch]);
 
-  <StoreContext.Provider value={store}>
-  </StoreContext.Provider>
-  */
+  return (
+    <>
+      <StoreContext.Provider value={store}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
+          <Route path="/:username" element={<UsersPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+        </Routes>
+      </StoreContext.Provider>
+    </>
+  );
+};
 
+  /*
   const [dataBaseLibrary, setDataBaseLibrary] = useState([]);
   const [initialBaseLibraryFetch, setInitialBaseLibraryFetch] = useState(true);
   const [user, setUser] = useState({
@@ -37,8 +49,10 @@ export const App = () => {
   });
   const [readLibrary, setReadLibrary] = useState([]);
   const [readingLibrary, setReadingLibrary] = useState([]);
+  */
 
   //Fetch Library Database
+  /*
   useEffect(() => {
     const fetchLibrary = async () => {
       try {
@@ -55,32 +69,4 @@ export const App = () => {
     initialBaseLibraryFetch && fetchLibrary();
     setInitialBaseLibraryFetch(false);
   }, [initialBaseLibraryFetch, dataBaseLibrary]);
-
-  return (
-    <>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/sign-in"
-          element={<SignInPage setUser={setUser} />}
-        />
-        <Route
-          path="/:username"
-          element={
-            <UsersPage
-              user={user}
-              readLibrary={readLibrary}
-              setReadLibrary={setReadLibrary}
-              readingLibrary={readingLibrary}
-              setReadingLibrary={setReadingLibrary}
-              dataBaseLibrary={dataBaseLibrary}
-              setDataBaseLibrary={setDataBaseLibrary}
-            />
-          }
-        />
-        <Route path="/about-us" element={<AboutUsPage />} />
-        <Route path="/contact-us" element={<ContactUsPage />} />
-      </Routes>
-    </>
-  );
-};
+  */

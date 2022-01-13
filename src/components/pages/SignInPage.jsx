@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-//import { StoreContext } from '../../store'
+import { StoreActions, StoreContext } from '../../store'
 
 import { Header } from "../Header";
 import { Footer } from "../Footer";
@@ -9,9 +9,8 @@ import { LocalAPIEndPoints } from "../../config";
 
 import "../../styles/sign-in.css";
 
-export const SignInPage = props => {
-  //const store = useContext(StoreContext);
-  const { setUser } = props;
+export const SignInPage = () => {
+  const store = useContext(StoreContext);
 
   const [userLogins, setUserLogins] = useState({
     username: "",
@@ -23,7 +22,7 @@ export const SignInPage = props => {
 
   const navigate = useNavigate();
 
-  //Fetch list of users
+  //Initial fetch (list of users & library)
   useEffect(() => {
     const fetchUsersData = async () => {
       try {
@@ -35,9 +34,22 @@ export const SignInPage = props => {
         console.log(error);
       }
     };
-    initialFetch && fetchUsersData();
+    const fetchDataBaseLibrary = async () => {
+      try {
+        const res = await fetch(LocalAPIEndPoints.libraryURL);
+        const data = await res.json();
+        console.log("fetched library:", data);
+        store.dispatch({
+          type: StoreActions.setDataBaseLibrary,
+          payload: data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    initialFetch && fetchUsersData() && fetchDataBaseLibrary();
     setInitialFetch(false);
-  }, [usersDataList, initialFetch]);
+  }, [usersDataList, initialFetch, store]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -49,8 +61,14 @@ export const SignInPage = props => {
     setUserLoginsSubmit(true);
   };
 
-  //Find user
   useEffect(() => {
+    const doDispatch = (type, payload) => {
+      store.dispatch({
+        type: type,
+        payload: payload
+      });
+    } 
+
     const getUserData = () => {
       const userFound = usersDataList.find(
         (user) =>
@@ -59,19 +77,18 @@ export const SignInPage = props => {
       );
       if (userFound) {
         console.log("selected user:", userFound);
-        setUser(userFound);
-        /*
-        store.dispatch({
-          type: "setUser",
-          payload: userFound
-        });*/
+        doDispatch(StoreActions.updateSignInButtonText, "Sign Out");
+        doDispatch(StoreActions.setUserId, userFound.id);
+        doDispatch(StoreActions.setUsername, userFound.userLogins.username)
+        doDispatch(StoreActions.setPassword, userFound.userLogins.password);
+        doDispatch(StoreActions.setReadLibrary, userFound.read);
+        doDispatch(StoreActions.setReadingLibrary, userFound.reading);
         navigate(`/${userLogins.username}`, { replace: true });
       }
-      //alert wrong password or non-existing user
     };
     userLoginsSubmit && getUserData();
     setUserLoginsSubmit(false);
-  }, [userLoginsSubmit, userLogins, usersDataList, navigate, setUser]);
+  }, [userLoginsSubmit, userLogins, usersDataList, navigate, store]);
 
   return (
     <>
